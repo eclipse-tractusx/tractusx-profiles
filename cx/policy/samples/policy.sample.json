@@ -1,0 +1,21 @@
+{
+  "@context": [
+    {
+      "@vocab": "https://w3id.org/edc/v0.0.1/ns/"
+    },
+    "https://w3id.org/catenax/ns/v1.0.0",
+    "http://www.w3.org/ns/odrl.jsonld"
+  ],
+  "@id": "definition-id",
+  "policy": {
+    "@type": "Set",
+    "@id": "http://example.com/framework-example",
+    "permission": {
+      "constraint": {
+        "leftOperand": "FrameworkAgreement.pcf",
+        "operator": "eq",
+        "rightOperand": "active"
+      }
+    }
+  }
+}
