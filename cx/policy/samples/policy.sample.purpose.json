@@ -12,9 +12,9 @@
     "@id": "http://example.com/framework-example",
     "permission": {
       "constraint": {
-        "leftOperand": "FrameworkAgreement",
+        "leftOperand": "UsagePurpose",
         "operator": "eq",
-        "rightOperand": "pcf:1.0.0"
+        "rightOperand": "trace.aspects:1.0"
       }
     }
   }

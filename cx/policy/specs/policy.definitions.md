@@ -14,27 +14,36 @@ Usage requirements involving VCs are expressed as **_ODRL Policy Constraints_**.
 
 ### 1.2.1. Left Operand Constraint Schema
 
-Catena-X will use the left operand of a _constraint_ to associate a specific VC. The left operand value will correspond
-to the form:
+Catena-X will use the left and right operands of a _constraint_ to associate a specific VC or other requirement. The
+left operand value will correspond to the form:
 
-`[VC type].[subtype]
+`[requirement type].[discriminator]
 
-The `subtype` segment is optional.
+The `requirement type` may be mapped to a VC or other requirement such as acceptance of terms and conditions.
+The `discriminator` segment is optional.
 
 ### 1.2.2. The Right Operand
 
-To indicate the need for an active (valid) credential the string value 'active' will be used. The value may contain an
-optional version postfix separated by `:`
+The right operand consists of the following segments separated by the `:` delimiter:
 
-`active:[version]`
+`[subtype | active]:[version]`
 
-The version segment can optionally be used to specify a credential variant. For example, requiring a specific version of
-a credential could be expressed as:
+The `subtype` segment is optional and is used to specify a refinement of the `requirement type`. If no
+specific `subtype` value is specified, `active` is used.
+
+The version segment can optionally be used to specify a requirement version, for example, mandating a specific version
+can be expressed as:
 
 `active:2.0.0`
 
-The version should followg [semantic versioning](https://semver.org/) If the version is omitted, the latest credential
-version will be used.
+The version should follow [semantic versioning](https://semver.org/) If the version is omitted, the latest version will
+be used.
+
+### 1.3 A Note on Json-Ld Prefixes
+
+Json-Ld prefixes are not show in the examples since the Json-Ld context includes term aliases that make prefixes
+optional for known constraint types. For example, assuming the `cx` prefix, `Membership` and `cx:Membership` are equal
+and will be processed in the same way.
 
 # 2. Membership Constraint
 
@@ -54,8 +63,6 @@ follows:
 The `Membership` constraint may only be used as an ODRL `Permission`.
 
 Valid `rightOperand` values are: `active`.
-
-> ISSUE: What are the `rightOperand` values?
 
 # 3. Dismantler Constraint
 
@@ -95,15 +102,12 @@ follows:
 }
 ```
 
-> ISSUE: What are the `rightOperand` values?
-
 ## 3.3. Dismantler.allowedBrands
 
 ***Not supported in 3.2**
 
 The `Dismantler.allowedBrands` subtype requires the dismantler to be certified for a set of brands. It is expressed
-using an `in` operator as
-follows:
+using an `in` operator as follows:
 
 ```json
 {
@@ -128,18 +132,17 @@ Framework agreement constraints adhere to the following syntax:
 ```json
 {
   "constraint": {
-    "leftOperand": "FrameworkAgreement.[type]",
+    "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "active:[version]"
+    "rightOperand": "[subtype]:[version]"
   }
 }
 ```
 
-The `type` segment specifies the framework case agreement type. The version postfix in the right operand is optional.
+The `subtype` segment specifies the framework case agreement. Note `active` is not a valid subtype. The version postfix
+is optional.
 
 Framework agreement constraints may only be used as an ODRL `Permission`.
-
-> ISSUE: What are the `rightOperand` values?
 
 ## 4.1. PCF
 
@@ -148,9 +151,9 @@ The PCF framework agreement is expressed as:
 ```json
 {
   "constraint": {
-    "leftOperand": "FrameworkAgreement.pcf",
+    "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "active:[version]"
+    "rightOperand": "pcf:[version]"
   }
 }
 ```
@@ -162,9 +165,9 @@ The Sustainability framework agreement is expressed as:
 ```json
 {
   "constraint": {
-    "leftOperand": "FrameworkAgreement.sustainability",
+    "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "active:[version]"
+    "rightOperand": "sustainability:[version]"
   }
 }
 ```
@@ -176,9 +179,9 @@ The Quality framework agreement is expressed as:
 ```json
 {
   "constraint": {
-    "leftOperand": "FrameworkAgreement.quality",
+    "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "active:[version]"
+    "rightOperand": "quality:[version]"
   }
 }
 ```
@@ -190,9 +193,9 @@ The Resiliency framework agreement is expressed as:
 ```json
 {
   "constraint": {
-    "leftOperand": "FrameworkAgreement.resiliency",
+    "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "active:[version]"
+    "rightOperand": "resiliency:[version]"
   }
 }
 ```
@@ -204,9 +207,9 @@ The Traceability framework agreement is expressed as:
 ```json
 {
   "constraint": {
-    "leftOperand": "FrameworkAgreement.traceability",
+    "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "active:[version]"
+    "rightOperand": "traceability:[version]"
   }
 }
 ```
@@ -218,9 +221,9 @@ The Behavior framework agreement is expressed as:
 ```json
 {
   "constraint": {
-    "leftOperand": "FrameworkAgreement.behavioraltwin",
+    "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "active:[version]"
+    "rightOperand": "behavioraltwin:[version]"
   }
 }
 ```
@@ -228,6 +231,44 @@ The Behavior framework agreement is expressed as:
 ## 4.7. BPN
 
 > ISSUE: The Membership VC appears to contain the same information. Is the BPN VC needed?
+
+## 4.8. ContractReference
+
+The `Membership` constraint is used to reference applicable terms and conditions or other applicable rules. It is
+expressed as follows:
+
+```json
+{
+  "constraint": {
+    "leftOperand": "ContractReference",
+    "operator": "eq",
+    "rightOperand": "[string]:[version]"
+  }
+}
+```
+
+The `ContractReference` constraint may only be used as an ODRL `Permission`.
+
+Valid `rightOperand` values must contain a `string` segment. This segment may be any valid set of characters, including
+a `URL`, contract number, or other relevant data.
+
+## 4.9. UsagePurpose
+
+The `UsagePurpose` constraint is used to denote a governing purpose. It is expressed as follows:
+
+```json
+{
+  "constraint": {
+    "leftOperand": "UsagePurpose",
+    "operator": "eq",
+    "rightOperand": "[string]:[version]"
+  }
+}
+```
+
+The `UsagePurpose` constraint may only be used as an ODRL `Permission`.
+
+Valid `rightOperand` values must contain a `string` segment. This segment may be any valid set of characters.
 
 # 5. Policy Example
 
@@ -257,9 +298,9 @@ an active signed traceability agreement:
             ]
           },
           {
-            "leftOperand": "FrameworkAgreement.traceability",
+            "leftOperand": "FrameworkAgreement",
             "operator": "eq",
-            "rightOperand": "active"
+            "rightOperand": "traceability"
           }
         ]
       }
