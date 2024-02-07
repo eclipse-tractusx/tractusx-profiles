@@ -42,7 +42,7 @@ be used.
 ### 1.3 A Note on Json-Ld Prefixes
 
 Json-Ld prefixes are not show in the examples since the Json-Ld context includes term aliases that make prefixes
-optional for known constraint types. For example, assuming the `cx` prefix, `Membership` and `cx:Membership` are equal
+optional for known constraint types. For example, assuming the `cx` prefix, `Membership` and `cx-policy:Membership` are equal
 and will be processed in the same way.
 
 # 2. Membership Constraint
@@ -280,7 +280,7 @@ an active signed traceability agreement:
   "@context": [
     "https://www.w3.org/ns/odrl.jsonld",
     {
-      "cx": "https://w3id.org/catenax/ns/v1.0.0"
+      "cx-policy": "https://w3id.org/catenax/policy/v1.0.0"
     }
   ],
   "@type": "Offer",
