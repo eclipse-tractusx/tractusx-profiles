@@ -11,8 +11,11 @@
       "Dismantler.activityType": "cx:Dismantler.activityType",
       "Dismantler.allowedBrands": "cx:Dismantler.allowedBrands",
       "Membership": "cx:Membership",
+      "UsagePurpose": "cx:UsagePurpose",
+      "ContractReference": "cx:ContractReference",
+      "FrameworkAgreement": "cx:FrameworkAgreement",
       "FrameworkAgreement.behavioraltwin": "cx:FrameworkAgreement.behavioraltwin",
-      "FrameworkAgreement.pcf": "cx:FrameworkAgreement.pcf",
+      "FrameworkAgreement.pcf": "cx:FrameworkAgreement.pcf" ,
       "FrameworkAgreement.quality": "cx:FrameworkAgreement.quality",
       "FrameworkAgreement.resiliency": "cx:FrameworkAgreement.resiliency",
       "FrameworkAgreement.sustainability": "cx:FrameworkAgreement.sustainability",
@@ -26,9 +29,9 @@
     "@id": "http://example.com/framework-example",
     "permission": {
       "constraint": {
-        "leftOperand": "FrameworkAgreement.pcf",
+        "leftOperand": "FrameworkAgreement",
         "operator": "eq",
-        "rightOperand": "active"
+        "rightOperand": "pcf"
       }
     }
   }
