@@ -37,9 +37,9 @@ In an example a policy constraint requiring the "pcf" credential in version 0.4.
 ```json
 {
   "constraint": {
-    "leftOperand": "FrameworkAgreement.pcf",
+    "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "active:0.4.2"
+    "rightOperand": "pcf:0.4.2"
   }
 }
 ```
@@ -51,23 +51,26 @@ If no contract version is specified in the policy constraint, then the policy **
 
 ### 3.1 Mapping Policy Constraint -> Credential Type
 
-Use case credentials are identified by their left operand with is prefixed with the `FrameworkAgreement.` term.
-Formally, a policy expression left-operand, that requires a use case credential, is defined by the following EBNF:
+Use case credentials are identified by their left operand, which is always `FrameworkAgreement`, and their right operand 
+which contains the use case identifier and optionally a version.
+Formally, a policy expression, that requires a use case credential, is defined by the following EBNF:
 
 ```ebnf
-POLICYLEFTOP      ::= FRAMEWORKLITERAL, DOT, USECASEIDENT ;
+POLICYLEFTOPERAND ::= FRAMEWORKLITERAL ;
+POLICYOPERATOR    ::= "eq"
 FRAMEWORKLITERAL  ::= "FrameworkAgreement" ;
+POLICYRIGHTOPERAND::= USECASEIDENT [COLON SEMVERSTRING]
 USECASEIDENT      ::= #'[a-z][a-zA-Z0-9]+' ;
-DOT               ::= "." ;
+COLON             ::= ":" ;
+SEMVERSTRING      ::= <any_semantic_version_string> ;
 ```
 
-For example: `FrameworkAgreement.pcf`.
 
 In order to reconstruct the actual credential type, which in the example would be `PcfCredential`, we perform relatively
 simple String manipulation:
 
-- remove `FrameworkAgreement.`
-- capitalize the remainder (i.e. `pcf --> Pcf`)
+- remove `FrameworkAgreement`. Hint: use it to trigger the transformation.
+- capitalize the right-operand (i.e. `pcf --> Pcf`)
 - append the `Credential` literal
 
 Formally, that transformation must adhere to the following EBNF:
