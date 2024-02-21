@@ -279,9 +279,7 @@ an active signed traceability agreement:
  {
   "@context": [
     "https://www.w3.org/ns/odrl.jsonld",
-    {
-      "cx-policy": "https://w3id.org/catenax/policy/v1.0.0"
-    }
+    "https://w3id.org/catenax/policy/v1.0.0"
   ],
   "@type": "Offer",
   "@id": "a343fcbf-99fc-4ce8-8e9b-148c97605aab",
