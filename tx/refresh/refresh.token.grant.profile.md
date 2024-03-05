@@ -95,7 +95,7 @@ grant_type=refresh_token&refresh_token=dFds4UOlH1QP7Fj3OkOAxM
 ### 3.1. Client Authentication
 
 The client making a refresh token request MUST use the bearer tokens as defined
-in [RFC6750.](https://datatracker.ietf.org/doc/html/rfc6750)== The client identifier is a JWT conforming to the
+in [RFC6750.](https://datatracker.ietf.org/doc/html/rfc6750). The client identifier is a JWT conforming to the
 following specifications:
 
 - The `kid` header parameter references the key material that is contained in the client's `DID Document` that can be
