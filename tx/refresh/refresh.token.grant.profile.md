@@ -105,6 +105,10 @@ following specifications:
 - A `access_token` contains the access token associated with the refresh token.
 - The JWT is signed using the private key associated with the key material specified by the `kid` header parameter.
 
+The consumer client SHOULD acknowledge refresh token rotation which might lead to revocation of the refresh token in case of subsequent 
+requests with the same refresh token. In that case the client should implement a mechanism to prevent redundant usage of the same refresh 
+token and instead use the refresh token after the rotation. An expired or revoked refresh token might lead to transfer process termination.
+
 ### 3.2. Provider Request Validation
 
 The provider data plane authorization server can verify the refresh request using the signed client JWT following these
