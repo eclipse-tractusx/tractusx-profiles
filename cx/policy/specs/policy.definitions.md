@@ -153,7 +153,7 @@ The PCF framework agreement is expressed as:
   "constraint": {
     "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "pcf:[version]"
+    "rightOperand": "Pcf:[version]"
   }
 }
 ```
@@ -167,7 +167,7 @@ The Sustainability framework agreement is expressed as:
   "constraint": {
     "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "sustainability:[version]"
+    "rightOperand": "Sustainability:[version]"
   }
 }
 ```
@@ -181,7 +181,7 @@ The Quality framework agreement is expressed as:
   "constraint": {
     "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "quality:[version]"
+    "rightOperand": "Quality:[version]"
   }
 }
 ```
@@ -195,7 +195,7 @@ The Resiliency framework agreement is expressed as:
   "constraint": {
     "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "resiliency:[version]"
+    "rightOperand": "Resiliency:[version]"
   }
 }
 ```
@@ -209,7 +209,7 @@ The Traceability framework agreement is expressed as:
   "constraint": {
     "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "traceability:[version]"
+    "rightOperand": "Traceability:[version]"
   }
 }
 ```
@@ -223,7 +223,7 @@ The Behavior framework agreement is expressed as:
   "constraint": {
     "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "behavioraltwin:[version]"
+    "rightOperand": "BehavioralTwin:[version]"
   }
 }
 ```
@@ -298,7 +298,7 @@ an active signed traceability agreement:
           {
             "leftOperand": "FrameworkAgreement",
             "operator": "eq",
-            "rightOperand": "traceability"
+            "rightOperand": "Traceability"
           }
         ]
       }

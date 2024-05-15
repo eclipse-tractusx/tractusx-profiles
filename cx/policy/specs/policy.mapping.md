@@ -32,20 +32,20 @@ Please check the syntax [here](./policy.definitions.md)
 Automatic mapping policy constraint expressions to credential type is possible assuming all framework credentials follow
 the same schema. Assuming that is the case, the evaluation of the policy (= the evaluation function) can be generic.
 
-In an example a policy constraint requiring the "pcf" credential in version 0.4.2, would look like this:
+In an example a policy constraint requiring the "Pcf" credential in version 0.4.2, would look like this:
 
 ```json
 {
   "constraint": {
     "leftOperand": "FrameworkAgreement",
     "operator": "eq",
-    "rightOperand": "pcf:0.4.2"
+    "rightOperand": "Pcf:0.4.2"
   }
 }
 ```
 
 If a specific contract version is referenced in the policy constraint, like in the example above, it follows that the
-policy **must be updated**, if version `0.4.3` of the `pcf` credential is released, and the policy should reference it.
+policy **must be updated**, if version `0.4.3` of the `Pcf` credential is released, and the policy should reference it.
 
 If no contract version is specified in the policy constraint, then the policy **need not be updated**.
 
@@ -70,7 +70,7 @@ In order to reconstruct the actual credential type, which in the example would b
 simple String manipulation:
 
 - remove `FrameworkAgreement`. Hint: use it to trigger the transformation.
-- capitalize the right-operand (i.e. `pcf --> Pcf`)
+- capitalize the right-operand if necessary (i.e. `pcf --> Pcf`)
 - append the `Credential` literal
 
 Formally, that transformation must adhere to the following EBNF:
