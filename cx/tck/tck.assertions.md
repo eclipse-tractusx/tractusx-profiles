@@ -69,7 +69,7 @@ expired `Membership Credential`.
 
 The assertion will verify that an `HTTP 4XX` error is returned.
 
-### 1. 3. Negative Invalid DID Membership Credential
+### 1. 4. Negative Invalid DID Membership Credential
 
 The test client will request a DSP catalog from the provider using the DSP/DCP protocol combination and provide
 a `Membership Credential` with an invalid `DID` for the `id` entry.
@@ -78,7 +78,7 @@ a `Membership Credential` with an invalid `DID` for the `id` entry.
 
 The assertion will verify that an `HTTP 4XX` error is returned.
 
-### 1. 4. Negative Invalid Holder Identifier Membership Credential
+### 1. 5. Negative Invalid Holder Identifier Membership Credential
 
 The test client will request a DSP catalog from the provider using the DSP/DCP protocol combination and provide
 a `Membership Credential` without a `holderIdentifier` entry.
@@ -129,7 +129,7 @@ expired `Dismantler Credential`.
 
 The assertion will verify that an `HTTP 4XX` error is returned.
 
-### 2. 3. Negative Invalid DID Dismantler Credential
+### 2. 4. Negative Invalid DID Dismantler Credential
 
 The test client will request a DSP catalog from the provider using the DSP/DCP protocol combination and provide
 a `Dismantler Credential` with an invalid `DID` for the `id` entry.
@@ -138,7 +138,7 @@ a `Dismantler Credential` with an invalid `DID` for the `id` entry.
 
 The assertion will verify that an `HTTP 4XX` error is returned.
 
-### 2. 4. Negative Invalid Holder Identifier Dismantler Credential
+### 2. 5. Negative Invalid Holder Identifier Dismantler Credential
 
 The test client will request a DSP catalog from the provider using the DSP/DCP protocol combination and provide
 a `Dismantler Credential` without a `holderIdentifier` entry.
@@ -190,7 +190,7 @@ expired `Framework Credential`.
 
 The assertion will verify that an `HTTP 4XX` error is returned.
 
-### 3. 3. Negative Invalid DID Dismantler Credential
+### 3. 4. Negative Invalid DID Dismantler Credential
 
 The test client will request a DSP catalog from the provider using the DSP/DCP protocol combination and provide
 a `Framework Credential` with an invalid `DID` for the `id` entry.
@@ -199,7 +199,7 @@ a `Framework Credential` with an invalid `DID` for the `id` entry.
 
 The assertion will verify that an `HTTP 4XX` error is returned.
 
-### 3. 4. Negative Invalid Holder Identifier Dismantler Credential
+### 3. 5. Negative Invalid Holder Identifier Dismantler Credential
 
 The test client will request a DSP catalog from the provider using the DSP/DCP protocol combination and provide
 a `Framework Credential` without a `holderIdentifier` entry.
