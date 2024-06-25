@@ -172,7 +172,7 @@ protocol combination and provide a valid Framework `Credential Credential` subty
 The assertion will verify that a valid `DCAT 3` catalog is returned containing an `Offer` for the dataset corresponding
 to each framework agreement subtype.
 
-### 3. 2. Negative No Dismantler Credential
+### 3. 2. Negative No Framework Credential
 
 The test client will request a DSP catalog from the provider using the DSP/DCP protocol combination and not provide
 a `Framework Credential`.
@@ -181,7 +181,7 @@ a `Framework Credential`.
 
 The assertion will verify that an `HTTP 4XX` error is returned.
 
-### 3. 3. Negative Expired Dismantler Credential
+### 3. 3. Negative Expired Framework Credential
 
 The test client will request a DSP catalog from the provider using the DSP/DCP protocol combination and provide an
 expired `Framework Credential`.
@@ -190,7 +190,7 @@ expired `Framework Credential`.
 
 The assertion will verify that an `HTTP 4XX` error is returned.
 
-### 3. 4. Negative Invalid DID Dismantler Credential
+### 3. 4. Negative Invalid DID Framework Credential
 
 The test client will request a DSP catalog from the provider using the DSP/DCP protocol combination and provide
 a `Framework Credential` with an invalid `DID` for the `id` entry.
@@ -199,7 +199,7 @@ a `Framework Credential` with an invalid `DID` for the `id` entry.
 
 The assertion will verify that an `HTTP 4XX` error is returned.
 
-### 3. 5. Negative Invalid Holder Identifier Dismantler Credential
+### 3. 5. Negative Invalid Holder Identifier Framework Credential
 
 The test client will request a DSP catalog from the provider using the DSP/DCP protocol combination and provide
 a `Framework Credential` without a `holderIdentifier` entry.
