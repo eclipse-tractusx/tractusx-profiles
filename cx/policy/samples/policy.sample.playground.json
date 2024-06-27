@@ -31,7 +31,7 @@
       "constraint": {
         "leftOperand": "FrameworkAgreement",
         "operator": "eq",
-        "rightOperand": "Pcf"
+        "rightOperand": "DataExchangeGovernance:1.0"
       }
     }
   }
