@@ -7,3 +7,4 @@
 5. Create JSON Schema definitions for all credentials using the URI: https://w3id.org/catenax/schemas/v1.0.0/
 6. Adopt JWT-based VCs using JWS algorithm `ES256K` and JWK curve `secp256k1`
 7. Separate namespaces for `tractusx` and `catenax`
+8. Add Data Exchange Governance Credential

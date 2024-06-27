@@ -144,7 +144,21 @@ is optional.
 
 Framework agreement constraints may only be used as an ODRL `Permission`.
 
-## 4.1. PCF
+## 4.1. Data Exchange Governance
+
+The DataExchangeGovernance framework agreement is expressed as:
+
+```json
+{
+  "constraint": {
+    "leftOperand": "FrameworkAgreement",
+    "operator": "eq",
+    "rightOperand": "DataExchangeGovernance:[version]"
+  }
+}
+```
+
+## 4.2. PCF
 
 The PCF framework agreement is expressed as:
 
@@ -158,7 +172,7 @@ The PCF framework agreement is expressed as:
 }
 ```
 
-## 4.2. Sustainability
+## 4.3. Sustainability
 
 The Sustainability framework agreement is expressed as:
 
@@ -172,7 +186,7 @@ The Sustainability framework agreement is expressed as:
 }
 ```
 
-## 4.3. Quality
+## 4.4. Quality
 
 The Quality framework agreement is expressed as:
 
@@ -186,7 +200,7 @@ The Quality framework agreement is expressed as:
 }
 ```
 
-## 4.4. Resiliency
+## 4.5. Resiliency
 
 The Resiliency framework agreement is expressed as:
 
@@ -200,7 +214,7 @@ The Resiliency framework agreement is expressed as:
 }
 ```
 
-## 4.5. Traceability
+## 4.6. Traceability
 
 The Traceability framework agreement is expressed as:
 
@@ -214,7 +228,7 @@ The Traceability framework agreement is expressed as:
 }
 ```
 
-## 4.6. Behavioral Twin
+## 4.7. Behavioral Twin
 
 The Behavior framework agreement is expressed as:
 
@@ -228,11 +242,11 @@ The Behavior framework agreement is expressed as:
 }
 ```
 
-## 4.7. BPN
+## 4.8. BPN
 
 > ISSUE: The Membership VC appears to contain the same information. Is the BPN VC needed?
 
-## 4.8. ContractReference
+## 4.9. ContractReference
 
 The `Membership` constraint is used to reference applicable terms and conditions or other applicable rules. It is
 expressed as follows:
@@ -252,7 +266,7 @@ The `ContractReference` constraint may only be used as an ODRL `Permission`.
 Valid `rightOperand` values must contain a `string` segment. This segment may be any valid set of characters, including
 a `URL`, contract number, or other relevant data.
 
-## 4.9. UsagePurpose
+## 4.10. UsagePurpose
 
 The `UsagePurpose` constraint is used to denote a governing purpose. It is expressed as follows:
 
@@ -298,7 +312,7 @@ an active signed traceability agreement:
           {
             "leftOperand": "FrameworkAgreement",
             "operator": "eq",
-            "rightOperand": "Traceability"
+            "rightOperand": "DataExchangeGovernance:1.0"
           }
         ]
       }

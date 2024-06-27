@@ -30,26 +30,30 @@ Specified in [Membership Credential Schema](../schema/credentials/membership.cre
 
 ### 2.4. Framework Credential Types
 
-#### 2.4.1. The `BehavioralTwinCredential` Type
+#### 2.4.1. The `DataExchangeGovernance` Type
+
+Specified in [Data Exchange Governance Credential Schema](../schema/credentials/dataexchange.governance.credential.schema.json).
+
+#### 2.4.2. The `BehavioralTwinCredential` Type
 
 Specified in [Behavioral Twin Credential Schema](../schema/credentials/behavioral.twin.credential.schema.json).
 
-#### 2.4.2. The `PcfCredential` Type
+#### 2.4.3. The `PcfCredential` Type
 
 Specified in [PCF Credential Schema](../schema/credentials/pcf.credential.schema.json).
 
-#### 2.4.3. The `QualityCredential` Type
+#### 2.4.4. The `QualityCredential` Type
 
 Specified in [Quality Credential Schema](../schema/credentials/quality.credential.schema.json).
 
-#### 2.4.4. The `ResiliencyCredential` Type
+#### 2.4.5. The `ResiliencyCredential` Type
 
 Specified in [Resiliency Credential Schema](../schema/credentials/resiliency.credential.schema.json).
 
-#### 2.4.5. The `SustainabilityCredential` Type
+#### 2.4.6. The `SustainabilityCredential` Type
 
 Specified in [Sustainability Credential Schema](../schema/credentials/sustainability.credential.schema.json).
 
-#### 2.4.6. The `TraceabilityCredential` Type
+#### 2.4.7. The `TraceabilityCredential` Type
 
 Specified in [Traceability Credential Schema](../schema/credentials/traceability.credential.schema.json).
