@@ -14,7 +14,7 @@
       "constraint": {
         "leftOperand": "FrameworkAgreement",
         "operator": "eq",
-        "rightOperand": "Pcf:1.0.0"
+        "rightOperand": "DataExchangeGovernance:1.0"
       }
     }
   }
