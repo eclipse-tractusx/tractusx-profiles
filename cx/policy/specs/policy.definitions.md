@@ -230,7 +230,7 @@ The Traceability framework agreement is expressed as:
 
 ## 4.7. Behavioral Twin
 
-The Behavior framework agreement is expressed as:
+The Behavior Twin framework agreement is expressed as:
 
 ```json
 {
@@ -242,11 +242,67 @@ The Behavior framework agreement is expressed as:
 }
 ```
 
-## 4.8. BPN
+## 4.8. BPDM (Business Partner Data Management)
+
+The Business Partner Data Management framework agreement is expressed as:
+
+```json
+{
+  "constraint": {
+    "leftOperand": "FrameworkAgreement",
+    "operator": "eq",
+    "rightOperand": "Bpdm:[version]"
+  }
+}
+```
+
+## 4.9. Puris
+
+The Puris framework agreement is expressed as:
+
+```json
+{
+  "constraint": {
+    "leftOperand": "FrameworkAgreement",
+    "operator": "eq",
+    "rightOperand": "Puris:[version]"
+  }
+}
+```
+
+## 4.10. Demand & Capacity Management
+
+The Demand & Capacity Management framework agreement is expressed as:
+
+```json
+{
+  "constraint": {
+    "leftOperand": "FrameworkAgreement",
+    "operator": "eq",
+    "rightOperand": "DemandCapacity:[version]"
+  }
+}
+```
+
+## 4.11. Circular Economy
+
+The Circular Economy framework agreement is expressed as:
+
+```json
+{
+  "constraint": {
+    "leftOperand": "FrameworkAgreement",
+    "operator": "eq",
+    "rightOperand": "CircularEconomy:[version]"
+  }
+}
+```
+
+## 4.12. BPN
 
 > ISSUE: The Membership VC appears to contain the same information. Is the BPN VC needed?
 
-## 4.9. ContractReference
+## 4.13. ContractReference
 
 The `Membership` constraint is used to reference applicable terms and conditions or other applicable rules. It is
 expressed as follows:
@@ -266,7 +322,7 @@ The `ContractReference` constraint may only be used as an ODRL `Permission`.
 Valid `rightOperand` values must contain a `string` segment. This segment may be any valid set of characters, including
 a `URL`, contract number, or other relevant data.
 
-## 4.10. UsagePurpose
+## 4.14. UsagePurpose
 
 The `UsagePurpose` constraint is used to denote a governing purpose. It is expressed as follows:
 

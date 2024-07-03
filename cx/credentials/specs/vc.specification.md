@@ -57,3 +57,19 @@ Specified in [Sustainability Credential Schema](../schema/credentials/sustainabi
 #### 2.4.7. The `TraceabilityCredential` Type
 
 Specified in [Traceability Credential Schema](../schema/credentials/traceability.credential.schema.json).
+
+#### 2.4.8. The `CircularEconomyCredential` Type
+
+Specified in [CircularEconomy Credential Schema](../schema/credentials/circulareconomy.credential.schema.json).
+
+#### 2.4.9. The `BpdmCredential` Type
+
+Specified in [Bpdm Credential Schema](../schema/credentials/bpdm.credential.schema.json).
+
+#### 2.4.10. The `PurisCredential` Type
+
+Specified in [Puris Credential Schema](../schema/credentials/puris.credential.schema.json).
+
+#### 2.4.11. The `DemandCapacityCredential` Type
+
+Specified in [DemandCapacity Credential Schema](../schema/credentials/demandcapacity.credential.schema.json).
