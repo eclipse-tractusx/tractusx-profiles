@@ -85,12 +85,10 @@ The client sends refresh token requests to the provider's data plane authorizati
 2 `refresh_token` grant type. A non-normative example is as follows:
 
 ```
-POST /token HTTP/1.1
+POST /token?grant_type=refresh_token&refresh_token=dFds4UOlH1QP7Fj3OkOAxM HTTP/1.1
 Host: server.example.com
 Content-Type: application/x-www-form-urlencoded
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-
-grant_type=refresh_token&refresh_token=dFds4UOlH1QP7Fj3OkOAxM
 ```
 
 ### 3.1. Client Authentication
